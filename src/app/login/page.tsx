@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
+import { useUser } from "@auth0/nextjs-auth0/client";
 
 export default function LoginPage() {
   return (
