@@ -1,18 +1,9 @@
-"use client";
-import { useUser } from "@auth0/nextjs-auth0/client";
 import React from "react";
+import { getSession } from "@auth0/nextjs-auth0";
 
-export default function home() {
-  const { user, isLoading, error } = useUser();
+export default async function home() {
+  const { user } = await getSession();
   console.log(user);
-  if (isLoading) {
-    return <div className="felx justify-center items-center">Loading...</div>;
-  }
-  if (error) {
-    return (
-      <div className="felx justify-center items-center">{error.message}</div>
-    );
-  }
   return (
     <div className="felx  justify-center">
       <div className="flex">
@@ -23,7 +14,7 @@ export default function home() {
             <p>{user.email}</p>
           </div>
         ) : (
-          <h2>Home Page</h2>
+          <h2>my app</h2>
         )}
       </div>
       <div className="flex">
