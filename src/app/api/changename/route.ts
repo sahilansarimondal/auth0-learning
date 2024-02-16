@@ -14,7 +14,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ message: "No user found" }, { status: 404 });
   }
 
-  const modifiedUser = new User({ name: newName, email: user.email });
+  const modifiedUser = await User.findOneAndUpdate({ name }, { name: newName });
 
   console.log("modified user" + modifiedUser);
 

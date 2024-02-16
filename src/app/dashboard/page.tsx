@@ -1,6 +1,7 @@
 "use client";
 import { useUser } from "@auth0/nextjs-auth0/client";
 import axios from "axios";
+import Link from "next/link";
 import React from "react";
 
 export default function Page() {
@@ -42,6 +43,7 @@ export default function Page() {
           Logout
         </a>
       </div>
+      <Link href={"/settings"}>Change Name</Link>
     </div>
   );
 }
