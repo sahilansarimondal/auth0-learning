@@ -9,5 +9,9 @@ export async function GET() {
 
   const dbUser = await User.findOne({ email });
 
+  if (!dbUser) {
+    return NextResponse.json({ message: "user not found", success: false });
+  }
+
   return NextResponse.json({ message: "user details", success: true, dbUser });
 }

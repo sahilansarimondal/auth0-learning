@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { useUser } from "@auth0/nextjs-auth0/client";
 import axios from "axios";
+import Link from "next/link";
 
 export default function settingsPage() {
   const [userName, setUserName] = useState("");
@@ -43,6 +44,11 @@ export default function settingsPage() {
           onChange={(e) => setNewName(e.target.value)}
         />
         <button onClick={changeName}>Change the name</button>
+      </div>
+
+      <div>
+        <h2>No data? </h2>
+        <Link href={"/login"}>go to Login page</Link>
       </div>
     </div>
   );
