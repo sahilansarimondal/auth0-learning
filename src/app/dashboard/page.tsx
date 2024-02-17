@@ -38,7 +38,7 @@ export default function Page() {
         )}
       </div>
       <div className="flex">
-        <button onClick={saveToDB}>Save to db</button>
+        <button onClick={saveToDB}> Click here to save to db</button>
         <a className="p-5 m-5" href="/api/auth/logout">
           Logout
         </a>

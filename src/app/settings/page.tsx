@@ -1,15 +1,11 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { useUser } from "@auth0/nextjs-auth0/client";
 import axios from "axios";
 import Link from "next/link";
 
 export default function settingsPage() {
   const [userName, setUserName] = useState("");
   const [newName, setNewName] = useState("");
-  const { user } = useUser();
-
-  console.log(user);
 
   const changeName = async () => {
     const data = {
@@ -35,7 +31,7 @@ export default function settingsPage() {
     <div className="flex flex-col items-center justify-center min-h-screen">
       <h2>Settings Page</h2>
 
-      <h2>Name : {userName}</h2>
+      <h2>Name according to DB : {userName}</h2>
       <div className="flex flex-col">
         {" "}
         <input

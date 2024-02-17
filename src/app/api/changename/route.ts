@@ -16,8 +16,6 @@ export async function POST(request: NextRequest) {
 
   const modifiedUser = await User.findOneAndUpdate({ name }, { name: newName });
 
-  console.log("modified user" + modifiedUser);
-
   const savedUser = await modifiedUser.save();
 
   return NextResponse.json({
