@@ -13,7 +13,6 @@ export default function settingsPage() {
       newName: newName.toLowerCase(),
     };
     const response = await axios.post("/api/changename", data);
-    console.log(response.data);
     setUserName(response.data.savedUser.name);
     window.location.reload();
   };
@@ -21,7 +20,6 @@ export default function settingsPage() {
   useEffect(() => {
     const getData = async () => {
       const response = await axios.get("/api/me");
-      console.log(response.data);
       setUserName(response.data.dbUser.name);
     };
     getData();

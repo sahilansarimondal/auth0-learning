@@ -3,7 +3,6 @@ import { getSession } from "@auth0/nextjs-auth0";
 
 export default async function home() {
   const { user } = await getSession();
-  console.log(user);
   return (
     <div className="felx  justify-center">
       <div className="flex">
