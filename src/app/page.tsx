@@ -6,7 +6,7 @@ export default function home() {
   return (
     <div className="flex justify-center items-center flex-col min-h-screen">
       <h2>Home Page</h2>
-      <Link href={"/login"}> go to Login page</Link>
+      <Link href={"api/auth/login"}> go to Login page</Link>
     </div>
   );
 }
